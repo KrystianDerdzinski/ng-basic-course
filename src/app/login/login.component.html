@@ -5,7 +5,15 @@
   <span [ngStyle]="{ 'color': userColor }">{{ loggedAs }}</span>
 </h3>
 
+<button (click)="increaseSize()">+</button>
+<button (click)="decreaseSize()">-</button>
+<div [ngStyle]="{ 'font-size': fontSize + 'px' }">Ostatnio zalogowy: wczoraj</div>
+<div *ngIf="fontSize > 20">Skontaktuj sie z okulista</div>
+<div *ngIf="fontSize < 12">Gratulacje! Super wzrok.</div>
+
 <button (click)="logUser()">{{ loginButtonText }}</button>
 <button (click)="logAsPremiumUser()">{{ premiumLoginButtonText }}</button>
 
 <p>To jest paragraf login-component</p>
+
+<app-dashboard></app-dashboard>

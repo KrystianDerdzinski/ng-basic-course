@@ -11,7 +11,17 @@ export class LoginComponent {
   premiumLoginButtonText = 'Log as premium user';
   userColor = 'black';
 
+  fontSize = 14;
+
   loggedAs: 'user' | 'premiumUser' | null = null;
+
+  increaseSize() {
+    this.fontSize += 1;
+  }
+
+  decreaseSize() {
+    this.fontSize -= 1;
+  }
 
   logUser() {
     this.loggedAs = 'user';
