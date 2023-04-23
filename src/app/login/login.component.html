@@ -1,0 +1,11 @@
+<h2>{{ headerText }}</h2>
+
+<h3 *ngIf="loggedAs">
+  <span [ngClass]="{ 'premium-user': loggedAs === 'premiumUser' }">Cześć</span>, jesteś zalogowany jako
+  <span [ngStyle]="{ 'color': userColor }">{{ loggedAs }}</span>
+</h3>
+
+<button (click)="logUser()">{{ loginButtonText }}</button>
+<button (click)="logAsPremiumUser()">{{ premiumLoginButtonText }}</button>
+
+<p>To jest paragraf login-component</p>
