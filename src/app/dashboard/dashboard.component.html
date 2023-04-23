@@ -1,8 +1,8 @@
-<div *ngFor="let user of users">
-  {{ user.name | uppercase }}
-  <img src="{{ user.imageUrl }}" alt="{{user.name}}">
-  <span *ngIf="user.age">Wiek: {{ user.age }}</span>
-  <span>{{ user.lastLogin | date: 'short' }}</span>
-</div>
-
-<!-- {{ users | json }} -->
+<ng-container *ngIf="userType === 'premiumUser'">
+  <div *ngFor="let user of users">
+    {{ user.name | uppercase }}
+    <img src="{{ user.imageUrl }}" alt="{{user.name}}">
+    <span *ngIf="user.age">Wiek: {{ user.age }}</span>
+    <span>{{ user.lastLogin | date: 'short' }}</span>
+  </div>
+</ng-container>

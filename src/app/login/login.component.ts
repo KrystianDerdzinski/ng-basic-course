@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserType } from '../types/user-type';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,7 @@ export class LoginComponent {
 
   fontSize = 14;
 
-  loggedAs: 'user' | 'premiumUser' | null = null;
+  loggedAs: UserType = null;
 
   increaseSize() {
     this.fontSize += 1;

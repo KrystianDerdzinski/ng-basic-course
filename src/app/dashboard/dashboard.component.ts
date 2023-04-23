@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { UserType } from '../types/user-type';
 
 type User = {
   name: string;
@@ -12,7 +13,9 @@ type User = {
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent implements OnInit, OnChanges {
+  @Input() userType: UserType = null;
+
   users: User[] = [];
 
   ngOnInit(): void {
@@ -38,4 +41,7 @@ export class DashboardComponent implements OnInit {
     ]
   }
 
+  ngOnChanges(): void {
+    console.log('DASHBOARD: ', this.userType)
+  }
 }
