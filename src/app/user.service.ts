@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { UserType } from './types/user-type';
+import { AccountInterface } from './types/account-type';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  getAccounts(): AccountType[] {
+  getAccounts(): AccountInterface[] {
     return [
       {
         name: 'Janusz',

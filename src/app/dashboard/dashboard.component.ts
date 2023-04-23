@@ -1,7 +1,7 @@
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { UserType } from '../types/user-type';
 import { UserService } from '../user.service';
-import { AccountType } from '../types/account-type';
+import { AccountInterface } from '../types/account-type';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,7 +11,7 @@ import { AccountType } from '../types/account-type';
 export class DashboardComponent implements OnInit, OnChanges {
   @Input() userType: UserType = null;
 
-  users: AccountType[] = [];
+  users: AccountInterface[] = [];
 
   constructor(
     private userService: UserService
